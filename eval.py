@@ -10,7 +10,7 @@ from utils import *
 ######## This code was developed by Charlie Tan, Student @ University of Bristol, UK, 2021 ########
 ###################################################################################################
 
-"warning: code setup to override bitdepth lr and codec seuqences are read at to 10"
+"warning: code setup to override bitdepth lr and codec seuqences are read at to 10 and to normalise 8 bit hr sequences to 10 bit values"
 
 def process_frame(sequence, frame_index, generator, opt):
 
@@ -116,7 +116,6 @@ def evaluate_sequence(video_file_gen, video_file_hr, video_file_codec, opt):
     if opt.benchmark_codec:
         sequence_codec = YUVFile(video_file_codec, bit_depth_read = 10) # overridng bit depth for reading
     
-    ### INITIAL VALUES FOR ITERATIVE MEAN ###
     sequence_gen_ws_psnr = [] 
     sequence_codec_ws_psnr = [] 
 
@@ -180,15 +179,14 @@ def main():
     parser.add_argument("--split", type=bool, default=True, help="to split frames into patches or not")
     parser.add_argument("--batch_size", type=int, default=256, help="size of the batches")
     parser.add_argument("--num_frames", type=int, default=-1, help="number of frames per sequence to process")
-    parser.add_argument("--lr_patch_dim", type=int, default=48, help="height/width of hr square patch")
+    parser.add_argument("--lr_patch_dim", type=int, default=48, help="height/width of lr square patch")
     parser.add_argument("--ratio", type=int, default=2, help="upsampling ratio (only tested for ratio = 2)")
     parser.add_argument("--overlap", type=int, default=4, help="overlap of patches at lr")
-    parser.add_argument("--channels", type=int, default=3, help="number of image channels")
-    parser.add_argument("--lr_folder", type=str, default=None, help="folder with lr sequeneces to evaluate")
+    parser.add_argument("--lr_folder", type=str, default=None, help="folder with lr sequences to evaluate")
     parser.add_argument("--save_folder", type=str, default=None, help="folder to save processed frames to")
     parser.add_argument("--hr_folder", type=str, default=None, help="folder with hr sequeneces to compare to")
     parser.add_argument("--codec_folder", type=str, default=None, help="folder with codec sequences to benchmark")
-    parser.add_argument("--metrics", type=bool, default=True, help="to compare to hr video")
+    parser.add_argument("--metrics", type=bool, default=True, help="to compare to hr video, false for just frame output")
     parser.add_argument("--benchmark_codec", type=bool, default=True, help="to compare the files in codec_folder with hr_folder")
     parser.add_argument("--model_file", type=str, default=None, help="model file to evaluate")
     opt = parser.parse_args()
