@@ -239,7 +239,6 @@ def main():
     opt.local_rank = int(opt.local_rank)
 
     ### REUSE SEED ###
-    # this does not ensure reproducibility (dataloading is still non deterministic) but should help reduce difference due to initalisation 
     torch.manual_seed(opt.seed)
     
     ### FOLDER / PATH MANAGEMENT ###
