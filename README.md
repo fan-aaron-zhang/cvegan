@@ -6,15 +6,15 @@ We run these scripts with Pytorch 1.9.0 (+ torchvision 0.10.0) and CUDA 11.1
 
 To evaluate a trained model run eval.py with the following arguments:
 
---lr_folder = "folder with lr sequences to evaluate" 
---save_folder = "folder to save processed frames to"
---hr_folder = "folder with hr sequences to compare to"
---codec_folder = "folder with codec sequences to benchmark"
+--lr_folder = "folder with lr sequences to evaluate" <br />
+--save_folder = "folder to save processed frames to"<br />
+--hr_folder = "folder with hr sequences to compare to"<br />
+--codec_folder = "folder with codec sequences to benchmark"<br />
 --model_file = "model file to evaluate"
 
 All other arguments are optional.
 
-Note: the evaluation code assumes 10 bit YUV from the decoder for both 10 bit and 8 bit input sequencues. There are arguments to the frame reading / writing methods for overriding the automatic (filename based) bit rate. There is also code normalising the 8 bit hr files to 10 bit values.
+Note: the evaluation code assumes 10 bit YUV from the decoder for both 10 bit and 8 bit input sequences. There are arguments to the frame reading / writing methods for overriding the automatic (filename based) bit rate and code normalising the 8 bit hr files to 10 bit values.
 
 ### Training
 
