@@ -6,11 +6,11 @@ These scripts were developped and run with Pytorch 1.9.0, torchvision 0.10.0 and
 
 To evaluate a trained model run eval.py with the following arguments:
 
-lr_folder = folder with lr sequences to evaluate <br />
-save_folder = folder to save processed frames to <br />
-hr_folder = folder with hr sequences to compare to (can be omitted if "metrics" = False) <br />
-codec_folder = folder with codec sequences to benchmark (can be omitted if either "metrics" or "benchmark_codec" = False <br />
-model_file = model file to evaluate
+lr_folder = "folder with lr sequences to evaluate" <br />
+save_folder = "folder to save processed frames to" <br />
+hr_folder = "folder with hr sequences to compare to" <br />
+codec_folder = "folder with codec sequences to benchmark" <br />
+model_file = "model file to evaluate"
 
 All other arguments are optional.
 
