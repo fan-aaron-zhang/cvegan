@@ -180,12 +180,6 @@ def chroma_sub_420(pixels):
 
     return pixels_sub
 
-def iterative_mean(old_mean, new_value, iteration):
-    "avoids storing lots of values of metrics"
-    new_mean = (iteration-1)/iteration * old_mean + new_value/iteration
-
-    return new_mean
-
 class FoldUnfold():
     "class to handle folding tensor frame into batch of patches and back to frame again"
 
