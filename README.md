@@ -1,6 +1,6 @@
 ## Source code for CVEGAN
 
-These scripts were developped and run with Pytorch 1.9.0, torchvision 0.10.0 and CUDA 11.1 
+These scripts were developed and run with Pytorch 1.9.0, torchvision 0.10.0 and CUDA 11.1 
 
 ### Evaluation
 
