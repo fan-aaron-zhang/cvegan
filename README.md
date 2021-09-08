@@ -1,6 +1,8 @@
 ### Source code for CVEGAN
 
-These scripts were developed and run with Pytorch 1.9.0, torchvision 0.10.0 and CUDA 11.1.
+CVEGAN was originally developed by Dr Di Ma using Tensorflow, this code is a Pytorch migration conducted by Mr Charlie Tan as part of his Univeristy of Bristol Faculty of Engineering Summer Research Internship. Multi-gpu training was an additional contirbution of Mr Tan.
+
+These scripts were implemented and run with Pytorch 1.9.0, torchvision 0.10.0 and CUDA 11.1. 
 
 ### Evaluation
 
@@ -17,7 +19,7 @@ python eval.py --lr_folder="" --save_folder="" --hr_folder="" --codec_folder="" 
 All other arguments are optional.
 
 Notes:<ul>
-<li>the evaluation code assumes 10 bit YUV from the decoder for both 10 bit and 8 bit input sequences. There are arguments to the frame reading / writing methods for overriding the automatic (filename based) bit rate and code normalising the 8 bit hr files to 10 bit values.</li>
+<li>the evaluation code assumes 10 bit YUV420 from the decoder for both 10 bit and 8 bit input sequences. There are arguments to the frame reading / writing methods for overriding the automatic (filename based) bit rate and code normalising the 8 bit hr files to 10 bit values.</li>
 </ul>
 
 ### Training
@@ -41,9 +43,7 @@ Notes:<ul>
 <li>initial (without discriminator) training does not pass directly into GAN (with discriminator) training. Please restart training with --start_epoch=EPOCH_NUMBER and --gan=True. The relevant files will be loaded and training will resume from the following epoch.</li>
 </ul>
 
-### Reference
-
-This code was originally developed by Dr Di Ma using Tensorflow, and further implemented by Mr Charlie Tan using Pytorch as part of his Univeristy of Bristol Faculty of Engineering Summer Research Internship. Multi-gpu training was an additional contirbution of Mr Tan.
+### References
  
 [1] Ma, D., Zhang, F. and Bull, D.R., 2020. CVEGAN: A Perceptually-inspired GAN for Compressed Video Enhancement. arXiv preprint arXiv:2011.09190.
 
