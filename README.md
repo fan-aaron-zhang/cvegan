@@ -24,11 +24,11 @@ Code supports single gpu training (linux and windows) and multi-gpu training (li
 
 To train CVEGAN, call train.py with the following arguments:
 
-train_folder = "overall folder to save models and image of training"
-sub_name = "subfolder to save models and images of training"
-dataset_folder = "folder of dataset" (expects two folders (train / valid) each containing two folders (hr / lr)
+train_folder = "overall folder to save models and image of training"<br />
+sub_name = "subfolder to save models and images of training"<br />
+dataset_folder = "folder of dataset" (expects two folders (train / valid) each containing two folders (hr / lr)<br />
 
-Note that the folder used is the result of train_folder + "/" + sub_name so please do not pass sub_name a full path.
+Note that the folder used is train_folder/sub_name so please do not pass sub_name a full path.
 
 All other arguments are optional.
 
