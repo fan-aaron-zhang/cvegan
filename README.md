@@ -6,11 +6,11 @@ These scripts were developed and run with Pytorch 1.9.0, torchvision 0.10.0 and 
 
 To evaluate a trained model, run eval.py with the following arguments:
 
-- lr_folder = "folder with lr sequences to evaluate" 
-- save_folder = "folder to save processed frames to"
-- hr_folder = "folder with hr sequences to compare to"
-- codec_folder = "folder with codec sequences to benchmark"
-- model_file = "model file to evaluate"
+- lr_folder = folder with lr sequences to evaluate 
+- save_folder = folder to save processed frames to
+- hr_folder = folder with hr sequences to compare to
+- codec_folder = folder with codec sequences to benchmark
+- model_file = model file to evaluate
 
 python eval.py --lr_folder="" --save_folder="" --hr_folder="" --codec_folder="" --model_file=""
 
@@ -25,9 +25,9 @@ Notes:<ul>
 Code supports single gpu training (linux and windows) and single node multi-gpu training (linux only). 
 
 To train CVEGAN, call train.py with the following arguments:
-- train_folder = "overall folder to save models and image of training
-- sub_name = "subfolder to save models and images of training
-- dataset_folder = "folder of dataset" (contains two folders (train / valid) each with two folders (hr / lr)
+- train_folder = overall folder to save models and image of training
+- sub_name = subfolder to save models and images of training
+- dataset_folder = folder of dataset (contains two folders (train / valid) each with two folders (hr / lr)
 
 python train.py --train_folder="" --sub_name="" --dataset_folder=""<br />
 For multi-gpu replace python with python -m torch.distributed.run --nproc_per_node=NUM_GPU --use_env
