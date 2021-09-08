@@ -29,17 +29,18 @@ sub_name = "subfolder to save models and images of training"<br />
 dataset_folder = "folder of dataset" (contains two folders (train / valid) each with two folders (hr / lr))<br />
 
 python train.py --train_folder="" --sub_name="" --dataset_folder=""<br />
-For multi-gpu replace [python] with [python -m torch.distributed.run --nproc_per_node=NUM_GPU --use_env]
+For multi-gpu replace python with python -m torch.distributed.run --nproc_per_node=NUM_GPU --use_env
 
 All other arguments are optional.
 
-Note: the folder used is train_folder/sub_name (do not pass sub_name a full path).
-Note: batch_size is defined per GPU and per accumulation step, an effective batch size is printed to stdout at the start of training. However, if patches are saved "stacked" (with batch dimension > 1) batch size is scaled accordingly.
-Note: initial (without discriminator) training does not pass directly into GAN (with discriminator) training. Please restart training with --start_epoch=EPOCH_NUMBER and --gan=True. The relevant files will be loaded and training will resume from the following epoch.
+Note: the folder used is train_folder/sub_name (do not pass sub_name a full path).<br />
+Note: patches are assumed to be stored as tensors normalised to range [0, 1].
+Note: batch_size is defined per GPU and per accumulation step, an effective batch size is printed to stdout at the start of training. However, if patches are saved "stacked" (with batch dimension > 1) batch size is scaled accordingly.<br />
+Note: initial (without discriminator) training does not pass directly into GAN (with discriminator) training. Please restart training with --start_epoch=EPOCH_NUMBER and --gan=True. The relevant files will be loaded and training will resume from the following epoch.<br />
 
 ### Reference
 
-This code was originally developed by Dr Di Ma using Tensorflow, and further implemented by Mr Charlie Tan using Pytorch.
+This code was originally developed by Dr Di Ma using Tensorflow, and further implemented by Mr Charlie Tan using Pytorch as part of his Univeristy of Bristol Faculty of Engineering Summer Research Internship. Multi-gpu training was an additional contirbution of Mr Tan.
  
 [1] Ma, D., Zhang, F. and Bull, D.R., 2020. CVEGAN: A Perceptually-inspired GAN for Compressed Video Enhancement. arXiv preprint arXiv:2011.09190.
 
