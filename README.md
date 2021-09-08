@@ -30,8 +30,8 @@ dataset_folder = "folder of dataset" (contains two folders (train / valid) each 
 
 Note that the folder used is train_folder/sub_name so please do not pass sub_name a full path.
 
-single gpu: python train.py --train_folder="" --sub_name="" --dataset_folder=""
-mutli-gpu: python -m torch.distributed.run --nproc_per_node=NUM_GPU --use_env train.py --train_folder="" --sub_name="" --dataset_folder=""
+python train.py --train_folder="" --sub_name="" --dataset_folder=""
+(for multi-gpu replace python with python -m torch.distributed.run --nproc_per_node=NUM_GPU --use_env)
 
 All other arguments are optional.
 
