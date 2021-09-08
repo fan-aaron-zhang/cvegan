@@ -16,7 +16,9 @@ python eval.py --lr_folder="" --save_folder="" --hr_folder="" --codec_folder="" 
 
 All other arguments are optional.
 
-Note: the evaluation code assumes 10 bit YUV from the decoder for both 10 bit and 8 bit input sequences. There are arguments to the frame reading / writing methods for overriding the automatic (filename based) bit rate and code normalising the 8 bit hr files to 10 bit values.
+Notes<ul>
+<li>the evaluation code assumes 10 bit YUV from the decoder for both 10 bit and 8 bit input sequences. There are arguments to the frame reading / writing methods for overriding the automatic (filename based) bit rate and code normalising the 8 bit hr files to 10 bit values.</li>
+</ul>
 
 ### Training
 
@@ -33,7 +35,7 @@ For multi-gpu replace python with python -m torch.distributed.run --nproc_per_no
 
 All other arguments are optional.
 
-<ul>Notes
+Notes<ul>
 <li>the folder used is train_folder/sub_name (do not pass sub_name a full path).</li>
 <li>patches are assumed to be stored as tensors normalised to range [0, 1].</li>
 <li>batch size is defined per GPU and per accumulation step, an effective batch size is printed to stdout at the start of training. However, if patches are saved "stacked" (with batch dimension > 1) batch size is scaled accordingly.</li>
