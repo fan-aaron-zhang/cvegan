@@ -1,6 +1,6 @@
 ### Source code for CVEGAN
 
-CVEGAN was originally developed by Dr Di Ma using Tensorflow, this code is a Pytorch migration conducted by Mr Charlie Tan as part of his University of Bristol Faculty of Engineering Summer Research Internship. Multi-gpu training was an additional contribution of Mr Tan.
+CVEGAN was originally developed by Dr Di Ma using Tensorflow, this code is a Pytorch migration conducted by Mr Charlie Tan as part of his University of Bristol Faculty of Engineering Summer Research Internship. Multi-gpu training and the batch based evaluation procedure are additional contributions of Mr Tan.
 
 These scripts were implemented and run with Pytorch 1.9.0, torchvision 0.10.0 and CUDA 11.1. 
 
