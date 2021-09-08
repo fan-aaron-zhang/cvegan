@@ -12,7 +12,7 @@ hr_folder = "folder with hr sequences to compare to" <br />
 codec_folder = "folder with codec sequences to benchmark" <br />
 model_file = "model file to evaluate"
 
-python eval.py --lr_folder="FOLDER1" --save_folder="FOLDER2" --hr_folder="FOLDER3" --codec_folder="FOLDER4" --model_file="MODELFILE"
+python eval.py --lr_folder="" --save_folder="" --hr_folder="" --codec_folder="" --model_file=""
 
 All other arguments are optional.
 
@@ -20,15 +20,18 @@ Note: the evaluation code assumes 10 bit YUV from the decoder for both 10 bit an
 
 ### Training
 
-Code supports single gpu training (linux and windows) and multi-gpu training (linux only). 
+Code supports single gpu training (linux and windows) and single node multi-gpu training (linux only). 
 
 To train CVEGAN, call train.py with the following arguments:
 
 train_folder = "overall folder to save models and image of training"<br />
 sub_name = "subfolder to save models and images of training"<br />
-dataset_folder = "folder of dataset" (contains two folders (train / valid) each with two folders (hr / lr)<br />
+dataset_folder = "folder of dataset" (contains two folders (train / valid) each with two folders (hr / lr))<br />
 
 Note that the folder used is train_folder/sub_name so please do not pass sub_name a full path.
+
+single gpu: python train.py --train_folder="" --sub_name="" --dataset_folder=""
+mutli-gpu: python -m torch.distributed.run --nproc_per_node=NUM_GPU --use_env train.py --train_folder="" --sub_name="" --dataset_folder=""
 
 All other arguments are optional.
 
