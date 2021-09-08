@@ -4,7 +4,7 @@ These scripts were developed and run with Pytorch 1.9.0, torchvision 0.10.0 and 
 
 ### Evaluation
 
-To evaluate a trained model run eval.py with the following arguments:
+To evaluate a trained model, run eval.py with the following arguments:
 
 lr_folder = "folder with lr sequences to evaluate" <br />
 save_folder = "folder to save processed frames to" <br />
@@ -19,6 +19,22 @@ All other arguments are optional.
 Note: the evaluation code assumes 10 bit YUV from the decoder for both 10 bit and 8 bit input sequences. There are arguments to the frame reading / writing methods for overriding the automatic (filename based) bit rate and code normalising the 8 bit hr files to 10 bit values.
 
 ### Training
+
+Code supports single gpu training (linux and windows) and multi-gpu training (linux only). 
+
+To train CVEGAN, call train.py with the following arguments:
+
+train_folder = "overall folder to save models and image of training"
+sub_name = "subfolder to save models and images of training"
+dataset_folder = "folder of dataset" (expects two folders (train / valid) each containing two folders (hr / lr)
+
+Note that the folder used is the result of train_folder + "/" + sub_name so please do not pass sub_name a full path.
+
+All other arguments are optional.
+
+Note that batch_size is defined per GPU and per accumulation step, an effective batch size is printed to stdout at the start of trining. However, if patches are saved "stacked" (with batch dimension > 1) batch size is scaled accordingly.
+
+Initial (without discriminator) training does not pass directly into GAN (with discriminator) training. Please restart training with --start_epoch = "EPOCH OF MODEL FILE TO LOAD" and --gan = True, the relevant files will be loaded and training will resume from the following epoch.
 
 ### Reference
 

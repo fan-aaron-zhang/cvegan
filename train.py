@@ -204,7 +204,6 @@ def valid_epoch(epoch, opt, valid_loader, loss_func_dict, loss_val_dict, generat
             save_image(grid_rgb, opt.save_path+"images/sample_{}.png".format(epoch), normalize=False)
 
 def main():
-
     ### ARGUMENT PARSING ###
     parser = argparse.ArgumentParser()
     parser.add_argument("--start_epoch", type=int, default=0, help="epoch to start/resume training from, if 0 start from scratch, if > 0 load files and resume from start_epoch+1")
@@ -219,7 +218,7 @@ def main():
     parser.add_argument("--b1", type=float, default=0.9, help="adam: decay of first order momentum of gradient") 
     parser.add_argument("--b2", type=float, default=0.999, help="adam: decay of first order momentum of gradient")
     parser.add_argument("--num_workers", type=int, default=4, help="number of cpu threads to use during batch generation [per GPU]")
-    parser.add_argument("--train_folder", type=str, default=None, help="overall folder for models and images of sub training")
+    parser.add_argument("--train_folder", type=str, default=None, help="overall folder for models and images of training")
     parser.add_argument("--sub_name", type=str, default=None, help="subfolder to save models and images of sub training")
     parser.add_argument("--dataset_folder", type=str, default=None, help="folder of dataset")
     parser.add_argument("--seed", type=int, default=689, help = "provide a seed value to use to compare trainings")
