@@ -1,6 +1,6 @@
-## Source code for CVEGAN
+### Source code for CVEGAN
 
-These scripts were developed and run with Pytorch 1.9.0, torchvision 0.10.0 and CUDA 11.1 
+These scripts were developed and run with Pytorch 1.9.0, torchvision 0.10.0 and CUDA 11.1.
 
 ### Evaluation
 
@@ -11,6 +11,8 @@ save_folder = "folder to save processed frames to" <br />
 hr_folder = "folder with hr sequences to compare to" <br />
 codec_folder = "folder with codec sequences to benchmark" <br />
 model_file = "model file to evaluate"
+
+python eval.py --lr_folder="FOLDER1" --save_folder="FOLDER2" --hr_folder="FOLDER3" --codec_folder="FOLDER4" --model_file="MODELFILE"
 
 All other arguments are optional.
 
