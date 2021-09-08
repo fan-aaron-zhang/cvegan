@@ -44,8 +44,8 @@ Notes:
 
 ### References
  
-[1] Ma, D., Zhang, F. and Bull, D.R., 2020. CVEGAN: A Perceptually-inspired GAN for Compressed Video Enhancement. arXiv preprint arXiv:2011.09190.
-[2] S. Woo, J. Park, J.-Y. Lee, and I. S. Kweon, ‘CBAM: Convolutional Block Attention Module’, 2018, pp. 3–19. Accessed: Sep. 08, 2021. [Online]. Available: https://openaccess.thecvf.com/content_ECCV_2018/html/Sanghyun_Woo_Convolutional_Block_Attention_ECCV_2018_paper.html
+[1] Ma, D., Zhang, F. and Bull, D.R., 2020. CVEGAN: A Perceptually-inspired GAN for Compressed Video Enhancement. arXiv preprint arXiv:2011.09190.<br />
+[2] S. Woo, J. Park, J.-Y. Lee, and I. S. Kweon, ‘CBAM: Convolutional Block Attention Module’, 2018, pp. 3–19. Accessed: Sep. 08, 2021. [Online]. Available: https://openaccess.thecvf.com/content_ECCV_2018/html/Sanghyun_Woo_Convolutional_Block_Attention_ECCV_2018_paper.html <br />
 [3] D. Ma, F. Zhang, and D. R. Bull, ‘BVI-DVC: A Training Database for Deep Video Compression’, arXiv:2003.13552 [cs, eess], Oct. 2020, Accessed: Jun. 24, 2021. [Online]. Available: http://arxiv.org/abs/2003.13552
 
 ### Authors
