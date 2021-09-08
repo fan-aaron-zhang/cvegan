@@ -33,10 +33,13 @@ For multi-gpu replace python with python -m torch.distributed.run --nproc_per_no
 
 All other arguments are optional.
 
-Note: the folder used is train_folder/sub_name (do not pass sub_name a full path).<br />
+Note: the folder used is train_folder/sub_name (do not pass sub_name a full path).
+
 Note: patches are assumed to be stored as tensors normalised to range [0, 1].
-Note: batch_size is defined per GPU and per accumulation step, an effective batch size is printed to stdout at the start of training. However, if patches are saved "stacked" (with batch dimension > 1) batch size is scaled accordingly.<br />
-Note: initial (without discriminator) training does not pass directly into GAN (with discriminator) training. Please restart training with --start_epoch=EPOCH_NUMBER and --gan=True. The relevant files will be loaded and training will resume from the following epoch.<br />
+
+Note: batch size is defined per GPU and per accumulation step, an effective batch size is printed to stdout at the start of training. However, if patches are saved "stacked" (with batch dimension > 1) batch size is scaled accordingly.
+
+Note: initial (without discriminator) training does not pass directly into GAN (with discriminator) training. Please restart training with --start_epoch=EPOCH_NUMBER and --gan=True. The relevant files will be loaded and training will resume from the following epoch.
 
 ### Reference
 
