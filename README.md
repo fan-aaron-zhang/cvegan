@@ -30,7 +30,8 @@ To train CVEGAN, call train.py with the following arguments:
 - sub_name = subfolder to save models and images of training
 - dataset_folder = folder of dataset (contains two folders (train / valid) each with two folders (hr / lr)
 
-python train.py --train_folder="" --sub_name="" --dataset_folder=""<br />
+python train.py --train_folder="" --sub_name="" --dataset_folder=""
+
 For multi-gpu replace "python" with "python -m torch.distributed.run --nproc_per_node=N --use_env", where N is the number of gpus to use.
 
 All other arguments are optional.
@@ -44,7 +45,7 @@ Notes:
 
 ### References
 
-training code used the following repository as a starting point: https://github.com/eriklindernoren/PyTorch-GAN/blob/master/implementations/srgan/srgan.py
+Training code used the following repository as a starting point: https://github.com/eriklindernoren/PyTorch-GAN/blob/master/implementations/srgan/srgan.py
 
 cbam.py taken directly from official implmentation: https://github.com/Jongchan/attention-module [3]
 
