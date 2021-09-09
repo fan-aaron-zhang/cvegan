@@ -1,6 +1,6 @@
 ### Source code for CVEGAN
 
-CVEGAN was originally developed by Dr Di Ma using Tensorflow, this code is a Pytorch migration conducted by Mr Charlie Tan as part of his University of Bristol Faculty of Engineering Summer Research Internship. Multi-gpu training and the batch based evaluation procedure are additional contributions of Mr Tan.
+CVEGAN was originally developed by Dr Di Ma using Tensorflow, this code is a Pytorch migration conducted by Mr Charlie Tan as part of his University of Bristol Faculty of Engineering Summer Research Internship [1]. Multi-gpu training and the batch based evaluation procedure are additional contributions of Mr Tan.
 
 These scripts were implemented and run with Pytorch 1.9.0, torchvision 0.10.0 and CUDA 11.1. 
 
@@ -40,17 +40,19 @@ Notes:
 - patches are assumed to be stored as tensors normalised to range [0, 1].
 - batch size is defined per GPU and per accumulation step, an effective batch size is printed to stdout at the start of training. However, if patches are saved "stacked" (with batch dimension > 1) batch size is scaled accordingly.
 - initial (without discriminator) training does not pass directly into GAN (with discriminator) training. Please restart training with --start_epoch=E and --gan=True, where E is the epoch from which to load the generator files. The relevant files will be loaded and training will resume from the following epoch.
-- example batches provided are from the BVI-DVC database.
+- example batches provided are from the BVI-DVC database [2].
 
 ### References
 
-https://github.com/eriklindernoren/PyTorch-GAN/blob/master/implementations/srgan/srgan.py was used as a starting point for the training and model code.
- 
-[1] Ma, D., Zhang, F. and Bull, D.R., 2020. CVEGAN: A Perceptually-inspired GAN for Compressed Video Enhancement. arXiv preprint arXiv:2011.09190.
+training code used the following repository as a starting point: https://github.com/eriklindernoren/PyTorch-GAN/blob/master/implementations/srgan/srgan.py
 
-[2] S. Woo, J. Park, J.-Y. Lee, and I. S. Kweon, ‘CBAM: Convolutional Block Attention Module’, 2018, pp. 3–19. Accessed: Sep. 08, 2021. [Online]. Available: https://openaccess.thecvf.com/content_ECCV_2018/html/Sanghyun_Woo_Convolutional_Block_Attention_ECCV_2018_paper.html 
+cbam.py taken directly from official implmentation: https://github.com/Jongchan/attention-module [3]
 
-[3] D. Ma, F. Zhang, and D. R. Bull, ‘BVI-DVC: A Training Database for Deep Video Compression’, arXiv:2003.13552 [cs, eess], Oct. 2020, Accessed: Jun. 24, 2021. [Online]. Available: http://arxiv.org/abs/2003
+[1] D. Ma, F. Zhang, and D. R. Bull, ‘CVEGAN: A Perceptually-inspired GAN for Compressed Video Enhancement’, arXiv:2011.09190 [cs, eess], Nov. 2020, Accessed: Jun. 24, 2021. [Online]. Available: http://arxiv.org/abs/2011.09190
+
+[2] D. Ma, F. Zhang, and D. R. Bull, ‘BVI-DVC: A Training Database for Deep Video Compression’, arXiv:2003.13552 [cs, eess], Oct. 2020, Accessed: Jun. 24, 2021. [Online]. Available: http://arxiv.org/abs/2003
+
+[3] S. Woo, J. Park, J.-Y. Lee, and I. S. Kweon, ‘CBAM: Convolutional Block Attention Module’, 2018, pp. 3–19. Accessed: Sep. 08, 2021. [Online]. Available: https://openaccess.thecvf.com/content_ECCV_2018/html/Sanghyun_Woo_Convolutional_Block_Attention_ECCV_2018_paper.html 
 
 ### Authors
 
